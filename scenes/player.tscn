@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cn7up6dhjbcvl"]
+[gd_scene load_steps=13 format=3 uid="uid://cn7up6dhjbcvl"]
 
 [ext_resource type="Texture2D" uid="uid://dkkugt28l4m7c" path="res://assets/Warrior_Idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c470spl35tpvg" path="res://scripts/player.gd" id="1_g2els"]
@@ -67,11 +67,18 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 30.265491
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(466, 250)
+position = Vector2(1, 3)
 sprite_frames = SubResource("SpriteFrames_vtaks")
 autoplay = "default"
 frame_progress = 0.45958158
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+shape = SubResource("CircleShape2D_g2els")
