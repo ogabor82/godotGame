@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://ysyfyd3vwpc4"]
+[gd_scene load_steps=11 format=3 uid="uid://ysyfyd3vwpc4"]
 
 [ext_resource type="Texture2D" uid="uid://crfq2embb36m3" path="res://assets/TNT_Purple.png" id="1_7p1mj"]
+[ext_resource type="Script" uid="uid://c5drcj054mdyp" path="res://scenes/enemy.gd" id="1_md0e3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
 atlas = ExtResource("1_7p1mj")
@@ -56,6 +57,7 @@ animations = [{
 radius = 20.024984
 
 [node name="CharacterBody2D2" type="CharacterBody2D"]
+script = ExtResource("1_md0e3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ca42v")
