@@ -25,9 +25,11 @@ func _physics_process(delta: float) -> void:
 	if player.position.x < position.x:
 		sprite.flip_h = true
 		collision_shape.scale.x = -1
+		flip_sprite(-1)
 	else:
 		sprite.flip_h = false
 		collision_shape.scale.x = 1
+		flip_sprite(1)
 
 	# move towards the player
 	var direction = (player.position - position).normalized()
@@ -35,3 +37,11 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+
+func flip_sprite(direction: float) -> void:
+	if direction > 0:
+		sprite.flip_h = false
+		collision_shape.scale.x = 1
+	else:
+		sprite.flip_h = true
+		collision_shape.scale.x = -1
