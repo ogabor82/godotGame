@@ -16,12 +16,13 @@ func _ready() -> void:
 	collision_shape = $CollisionShape2D
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+func _physics_process(_delta: float) -> void:
+	# Move towards the player in both X and Y directions
+	var direction = (player.position - position).normalized()
+	velocity.x = direction.x * SPEED
+	velocity.y = direction.y * SPEED
 
-	# Face the player only while the player is moving horizontally
+	# Face the player based on horizontal position
 	if player.position.x < position.x:
 		sprite.flip_h = true
 		collision_shape.scale.x = -1
@@ -30,11 +31,6 @@ func _physics_process(delta: float) -> void:
 		sprite.flip_h = false
 		collision_shape.scale.x = 1
 		flip_sprite(1)
-
-	# move towards the player
-	var direction = (player.position - position).normalized()
-	velocity.x = direction.x * SPEED
-
 
 	move_and_slide()
 
