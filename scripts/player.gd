@@ -12,22 +12,28 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-	# handle jump with up arrow
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	var direction_x := Input.get_axis("ui_left", "ui_right")
+	var direction_y := Input.get_axis("ui_up", "ui_down")
+	
+	if direction_x:
+		velocity.x = direction_x * SPEED
 		$AnimatedSprite2D.play("walk")
-		flip_sprite(direction)
-		
+		flip_sprite(direction_x)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if velocity.x == 0:
+		if velocity.x == 0 and direction_y == 0:
 			$AnimatedSprite2D.play("idle")
+	
+	if direction_y:
+		velocity.y = direction_y * SPEED
+		if direction_x == 0:
+			$AnimatedSprite2D.play("walk")
+	else:
+		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
 
