@@ -11,13 +11,13 @@
 position = Vector2(170, 157)
 
 [node name="Enemy" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(367, 156)
+position = Vector2(598, 117)
 
 [node name="Enemy2" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(801, 155)
+position = Vector2(1050, 75)
 
 [node name="Enemy3" parent="." instance=ExtResource("2_yqjtg")]
-position = Vector2(578, 165)
+position = Vector2(808, 87)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
