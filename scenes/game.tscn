@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cyraxm88uqh8s"]
+[gd_scene load_steps=6 format=3 uid="uid://cyraxm88uqh8s"]
 
 [ext_resource type="PackedScene" uid="uid://cn7up6dhjbcvl" path="res://scenes/player.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ysyfyd3vwpc4" path="res://scenes/enemy.tscn" id="2_yqjtg"]
@@ -220,8 +220,6 @@ terrain_set_0/terrain_1/name = "Sand"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
-
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -242,9 +240,3 @@ position = Vector2(1050, 75)
 
 [node name="Enemy3" parent="." instance=ExtResource("2_yqjtg")]
 position = Vector2(808, 87)
-
-[node name="FloorBoundary" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorBoundary"]
-position = Vector2(423, 281)
-shape = SubResource("WorldBoundaryShape2D_yqjtg")
