@@ -1,6 +1,11 @@
-[gd_scene format=3 uid="uid://dg46hkwh2m0mg"]
+[gd_scene load_steps=2 format=3 uid="uid://dg46hkwh2m0mg"]
+
+[ext_resource type="Script" uid="uid://cljviimjnsuxn" path="res://scripts/game_over.gd" id="1_xeevv"]
 
 [node name="GameOver" type="CanvasLayer"]
+process_mode = 2
+visible = false
+script = ExtResource("1_xeevv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -18,7 +23,7 @@ offset_bottom = 293.0
 theme_override_font_sizes/font_size = 120
 text = "Game Over"
 
-[node name="Button" type="Button" parent="."]
+[node name="ResetGameButton" type="Button" parent="."]
 offset_left = 431.0
 offset_top = 386.0
 offset_right = 539.0
@@ -26,3 +31,5 @@ offset_bottom = 417.0
 theme_override_font_sizes/font_size = 40
 text = "Reset button
 "
+
+[connection signal="pressed" from="ResetGameButton" to="." method="_on_reset_game_button_pressed"]
