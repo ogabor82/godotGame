@@ -9,6 +9,9 @@ var player: CharacterBody2D
 var collision_shape: CollisionShape2D
 
 func _ready() -> void:
+	# Add to enemy group for detection
+	add_to_group("enemy")
+	
 	# Cache reference to the Player (assumes Player and Enemy share the same parent)
 	var parent := get_parent()
 	if parent and parent.has_node("Player"):
