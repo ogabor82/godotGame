@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cn7up6dhjbcvl"]
+[gd_scene load_steps=26 format=3 uid="uid://cn7up6dhjbcvl"]
 
 [ext_resource type="Texture2D" uid="uid://dkkugt28l4m7c" path="res://assets/Warrior_Idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://c470spl35tpvg" path="res://scripts/player.gd" id="1_g2els"]
@@ -152,6 +152,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 18.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
+size = Vector2(65, 108)
+
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_g2els")
@@ -161,9 +164,15 @@ position = Vector2(3, 1)
 sprite_frames = SubResource("SpriteFrames_vtaks")
 animation = &"attack"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
+frame = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 21)
 shape = SubResource("CircleShape2D_g2els")
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(37.5, 6)
+shape = SubResource("RectangleShape2D_dqkch")
+debug_color = Color(0.9587435, 0.12872073, 0.40687683, 0.41960785)
