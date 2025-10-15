@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -400.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var attack_area: Area2D = $AttackArea
+@onready var sword_hit_sound: AudioStreamPlayer2D = $SwordHitSound
 
 var is_attacking: bool = false
 
@@ -25,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_select") and not is_attacking:
 		is_attacking = true
 		animated_sprite.play("attack")
+		sword_hit_sound.play()
 		return
 	
 	# Don't allow movement while attacking
