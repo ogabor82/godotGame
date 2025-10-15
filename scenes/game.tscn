@@ -281,3 +281,4 @@ position = Vector2(170, 157)
 [node name="Camera2D" type="Camera2D" parent="Actors/Player"]
 
 [node name="GameOver" parent="." instance=ExtResource("6_p57ef")]
+visible = false

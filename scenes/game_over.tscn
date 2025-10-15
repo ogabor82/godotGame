@@ -2,7 +2,27 @@
 
 [node name="GameOver" type="CanvasLayer"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 1, 0.27058825, 0.14901961)
+
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 208.0
+offset_top = 128.0
+offset_right = 860.0
+offset_bottom = 293.0
+theme_override_font_sizes/font_size = 120
 text = "Game Over"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 431.0
+offset_top = 386.0
+offset_right = 539.0
+offset_bottom = 417.0
+theme_override_font_sizes/font_size = 40
+text = "Reset button
+"
