@@ -298,7 +298,7 @@ autostart = true
 [node name="EnemySpawner" parent="." instance=ExtResource("7_u5sy4")]
 enemy_scene = ExtResource("2_yqjtg")
 
-[node name="11_DangerousCave" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("8_gee14")
 autoplay = true
