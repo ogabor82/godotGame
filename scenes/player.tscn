@@ -180,3 +180,4 @@ debug_color = Color(0.9587435, 0.12872073, 0.40687683, 0.41960785)
 
 [node name="SwordHitSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_qlg0r")
+bus = &"FX"

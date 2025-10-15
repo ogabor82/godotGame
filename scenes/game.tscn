@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyraxm88uqh8s"]
+[gd_scene load_steps=13 format=3 uid="uid://cyraxm88uqh8s"]
 
 [ext_resource type="PackedScene" uid="uid://cn7up6dhjbcvl" path="res://scenes/player.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ysyfyd3vwpc4" path="res://scenes/enemy.tscn" id="2_yqjtg"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dtrtkdd6ho64g" path="res://scenes/tree.tscn" id="4_lbhrr"]
 [ext_resource type="Script" uid="uid://d3cx6kre1tnh3" path="res://scripts/hud.gd" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://dbrlepp2a0ict" path="res://scenes/enemy_spawner.tscn" id="7_u5sy4"]
-[ext_resource type="AudioStream" uid="uid://dox8hnhrkweaq" path="res://assets/sounds/music/11. Dangerous Cave.mp3" id="8_gee14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -297,10 +296,5 @@ autostart = true
 
 [node name="EnemySpawner" parent="." instance=ExtResource("7_u5sy4")]
 enemy_scene = ExtResource("2_yqjtg")
-
-[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("8_gee14")
-autoplay = true
 
 [connection signal="timeout" from="HUD/SurvivedTimeTimer" to="HUD" method="_on_survived_time_timer_timeout"]
