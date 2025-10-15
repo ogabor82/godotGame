@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvrlwo310ns0k"]
+[gd_scene load_steps=3 format=3 uid="uid://dvrlwo310ns0k"]
+
+[ext_resource type="Script" uid="uid://bcswadctm3s36" path="res://scripts/kill_zone.gd" id="1_kebdr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5csqv"]
 radius = 34.0147
 
 [node name="KillZone" type="Area2D"]
+script = ExtResource("1_kebdr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
 shape = SubResource("CircleShape2D_5csqv")
 debug_color = Color(0.93565017, 0.22568348, 0.31061196, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
