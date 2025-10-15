@@ -278,3 +278,12 @@ position = Vector2(598, 117)
 position = Vector2(170, 157)
 
 [node name="Camera2D" type="Camera2D" parent="Actors/Player"]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="SurvivedTimeabel" type="Label" parent="HUD"]
+offset_left = 10.0
+offset_right = 247.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 30
+text = "Survived Time: 0"
