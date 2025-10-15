@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://ysyfyd3vwpc4"]
+[gd_scene load_steps=12 format=3 uid="uid://ysyfyd3vwpc4"]
 
 [ext_resource type="Texture2D" uid="uid://crfq2embb36m3" path="res://assets/TNT_Purple.png" id="1_7p1mj"]
 [ext_resource type="Script" uid="uid://c5drcj054mdyp" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://dvrlwo310ns0k" path="res://scenes/kill_zone.tscn" id="3_4ra3w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vtaks"]
 atlas = ExtResource("1_7p1mj")
@@ -65,3 +66,5 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_7p1mj")
+
+[node name="KillZone" parent="." instance=ExtResource("3_4ra3w")]
