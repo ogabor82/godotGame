@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyraxm88uqh8s"]
+[gd_scene load_steps=12 format=3 uid="uid://cyraxm88uqh8s"]
 
 [ext_resource type="PackedScene" uid="uid://cn7up6dhjbcvl" path="res://scenes/player.tscn" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ysyfyd3vwpc4" path="res://scenes/enemy.tscn" id="2_yqjtg"]
 [ext_resource type="Texture2D" uid="uid://rx7mndh0xrt4" path="res://assets/Rocks_04.png" id="3_iywne"]
 [ext_resource type="Texture2D" uid="uid://bedtr41m3mj50" path="res://assets/Tilemap_Flat.png" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://dtrtkdd6ho64g" path="res://scenes/tree.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://d3cx6kre1tnh3" path="res://scripts/hud.gd" id="6_p57ef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("3_lnu2h")
@@ -280,6 +281,7 @@ position = Vector2(170, 157)
 [node name="Camera2D" type="Camera2D" parent="Actors/Player"]
 
 [node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("6_p57ef")
 
 [node name="SurvivedTimeabel" type="Label" parent="HUD"]
 offset_left = 10.0
@@ -287,3 +289,5 @@ offset_right = 247.0
 offset_bottom = 42.0
 theme_override_font_sizes/font_size = 30
 text = "Survived Time: 0"
+
+[node name="SurvivedTimeTimer" type="Timer" parent="HUD"]
