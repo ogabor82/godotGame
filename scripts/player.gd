@@ -66,8 +66,10 @@ func _physics_process(delta: float) -> void:
 func flip_sprite(direction: float) -> void:
 	if direction > 0:
 		animated_sprite.flip_h = false
+		attack_area.scale.x = 1
 	else:
 		animated_sprite.flip_h = true
+		attack_area.scale.x = -1
 
 
 func _on_frame_changed() -> void:
